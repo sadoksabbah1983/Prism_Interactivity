@@ -15,7 +15,7 @@
             </TextBlock>
             
             <TextBlock Margin="10" TextWrapping="Wrap" FontWeight="Bold"> Please Select an item :</TextBlock>
-            <ListBox SelectionMode="Single" Margin="10,0" Height="100" ItemsSource="{Binding Notification.Items}" SelectedItem="{Binding SelectetdItem,Mode=TwoWay}"/>
+            <ListBox SelectionMode="Single" Margin="10,0" Height="100" ItemsSource="{Binding Notification.Items}" SelectedItem="{Binding SelectedItem,Mode=TwoWay}"/> 
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
