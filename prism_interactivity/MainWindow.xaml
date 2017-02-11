@@ -3,10 +3,29 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:prism_interactivity"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
+   
+        xmlns:prism="http://www.codeplex.com/prism"
+        xmlns:views="clr-namespace:prism_interactivity.Views"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         
+        Title="QuickStart" Height="480" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Margin="5" FontSize="32" TextWrapping="Wrap">Interactivity QuickStart</TextBlock>
+        <TabControl AutomationProperties.AutomationId="InteractivityTabControö" Grid.Row="1">
+            <TabItem Header="Introduction">
+                <views:IntroductionView/>
+            </TabItem>
+            <TabItem Header="InteractionRequest">
+                <views:InteractionRequestView/>
+            </TabItem>
+            <TabItem Header="InvokeCommandAction">
+                <views:InvokeCommandActionView/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

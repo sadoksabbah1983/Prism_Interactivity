@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prism_interactivity.ViewModels
 {
-    class Class1
+    class InvokeCommandActionViewModel
     {
     }
 }

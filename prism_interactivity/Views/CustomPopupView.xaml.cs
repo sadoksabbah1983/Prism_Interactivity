@@ -12,17 +12,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
 
 namespace prism_interactivity.Views
 {
     /// <summary>
     /// Interaction logic for CustomPopupView.xaml
     /// </summary>
-    public partial class CustomPopupView : UserControl
+    public partial class CustomPopupView : UserControl,IInteractionRequestAware
     {
         public CustomPopupView()
         {
             InitializeComponent();
+        }
+
+
+        public Action FinishInteraction { get; set; }
+        public INotification Notification { get; set; }
+
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.FinishInteraction != null)
+                this.FinishInteraction();
         }
     }
 }

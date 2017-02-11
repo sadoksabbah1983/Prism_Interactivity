@@ -9,8 +9,40 @@
              xmlns:viewModels="clr-namespace:prism_interactivity.ViewModels"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             Width ="400">
     <Grid>
+        <StackPanel>
+            <TextBlock FontSize="24" Foreground="DarkBlue" Margin="10">CustomPopupView</TextBlock>
+            <TextBlock Margin="10" TextWrapping="Wrap" >his is a custom view that is being shown in response to an interaction request being raised</TextBlock>
+            <TextBlock Margin="10" TextWrapping="Wrap" >The data passed through the notification is:</TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                     <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Margin="10,3" FontWeight="Bold" TextWrapping="Wrap" Grid.Row="0" Grid.Column="0"> Title :</TextBlock>
+                <TextBlock Margin="10,3" TextWrapping="Wrap" Grid.Row="0" Grid.Column="1" Text="{Binding Title}"/>
+
+                <TextBlock Margin="10,3" FontWeight="Bold" TextWrapping="Wrap" Grid.Row="1" Grid.Column="0"> Content :</TextBlock>
+                <TextBlock Margin="10,3" TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Text="{Binding Content}"/>
+            </Grid>
+            <TextBlock Margin="10" TextWrapping="Wrap">
+             The notification passed as a parameter in the InteractionRequest is automatically set as the DataContext of the window.
+             As this view does not have its own DataContext it will inherit the DataContext of the hosting window   
+            </TextBlock>
+            <TextBlock Margin="10" TextWrapping="Wrap">
+             You can either stop this iteration by closing the window or clicking the button below.
+             The button will invoke the FinishInteraction action to close the window.
+            </TextBlock>
+
+
+            <Button AutomationProperties.AutomationId="CustomPopupCloseButton" Margin="10" HorizontalAlignment="Right" Width="75" Click="Button_Click">Close</Button>
+      
+        </StackPanel>
             
     </Grid>
 </UserControl>
