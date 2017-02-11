@@ -26,6 +26,8 @@
             <TabItem Header="InvokeCommandAction">
                 <views:InvokeCommandActionView/>
             </TabItem>
+            
+            
         </TabControl>
     </Grid>
 </Window>
